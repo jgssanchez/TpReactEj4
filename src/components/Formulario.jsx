@@ -1,17 +1,20 @@
+import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import Lista from './Lista';
+
 
 const Formulario=()=> {
   return (
+    <section> 
     <Form>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="name@example.com" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Example textarea</Form.Label>
-        <Form.Control as="textarea" rows={3} />
-      </Form.Group>
+      <Form.Group className="mb-3 d-flex" controlId="exampleForm.ControlInput1">
+        
+        <Form.Control type="text" placeholder="Ingrese su Tarea..."  />
+        <Button type='submit'className='m-2'>Agregar</Button>
+    </Form.Group>
     </Form>
+    <Lista></Lista>
+    </section>
   );
 }
 
