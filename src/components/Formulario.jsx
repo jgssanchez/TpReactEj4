@@ -38,7 +38,9 @@ const Formulario = () => {
             placeholder="Ingrese su Tarea..."
             onChange={(e) => setTarea(e.target.value)}
             value={tarea}
-            className="bg-gray"
+            minLength={5}
+            maxLength={100}
+            
 
           />
           <Button type="submit" className="m-2">
