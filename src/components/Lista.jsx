@@ -1,11 +1,11 @@
 import { ListGroup } from "react-bootstrap";
 import ItemTarea from "./ItemTarea";
 
-const Lista = ({arrayTareas,borrarTarea}) => {
+const  Lista = ({arrayTareas}) => {
   return (
     <ListGroup className="py-3">
       {
-        arrayTareas.map((tarea,posicion)=> <ItemTarea key={posicion} tarea={tarea} borrarTarea={borrarTarea} ></ItemTarea>)
+        arrayTareas.map((tarea,posicion)=> <ItemTarea key={posicion} tarea={tarea.descripcionTarea} id={tarea._id} ></ItemTarea>)
       }
     </ListGroup>
   );

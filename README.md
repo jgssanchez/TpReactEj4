@@ -1,5 +1,3 @@
-Hice todo el ejercicio en rama main :C , tuve que borrar el repo y hacer uno nuevo.
-
 
 Lista de tareas - Dificultad:  
 
@@ -7,4 +5,4 @@ Crear una aplicación web que  muestre una lista de tareas, al ingresar una tare
  <img src="./src/assets/Capturaa.PNG>
 
  URL DEPLOY :
- https://tp-react-ej4.vercel.app/
+ 

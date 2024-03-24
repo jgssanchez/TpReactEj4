@@ -2,28 +2,29 @@ import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Lista from "./Lista";
 import { useState } from "react";
+import axios from "axios";
 
 const Formulario = () => {
   const [tarea, setTarea] = useState("");
-  const [arrayTareas, setArrayTareas] = useState([]);
 
-  const handleSubmit = e => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (tarea.trim() === "") {
       alert("La tarea está vacía");
       return;
     }
+    await axios.post("http://localhost:4002/api/listas/crear-tarea",{tarea})
+    .then(res=> window.location.reload())
 
-    setArrayTareas([...arrayTareas, tarea]);
-    setTarea("");
   };
-  const borrarTarea = nombreTarea => {
-    const arregloFiltrado = arrayTareas.filter(
-      elementoTarea => elementoTarea !== nombreTarea
-    );
-    setArrayTareas(arregloFiltrado);
-  };
+  // const borrarTarea = nombreTarea => {
+  //   const arregloFiltrado = arrayTareas.filter(
+  //     elementoTarea => elementoTarea !== nombreTarea
+  //   );
+  //   setArrayTareas(arregloFiltrado);
+  // };
   
 
   return (
@@ -48,9 +49,8 @@ const Formulario = () => {
           </Button>
         </Form.Group>
       </Form>
-      <Lista arrayTareas={arrayTareas}
-        borrarTarea={borrarTarea}>
-      </Lista>
+      
+      
     </section>
   );
 };
