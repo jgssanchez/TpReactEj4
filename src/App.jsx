@@ -11,7 +11,7 @@ const  App =() => {
   const [tareas,setTareas] = useState([])
   useEffect(()=>{
     const obtenerTareas= async()=>{
-      const {data} = await axios.get('http://localhost:4002/api/listas/mostrar-tareas');
+      const {data} = await axios.get('https://lista-tareas-backend-eosin.vercel.app/api/listas/mostrar-tareas');
       setTareas(data)
     }
     obtenerTareas();

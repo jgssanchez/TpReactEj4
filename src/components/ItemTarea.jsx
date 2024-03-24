@@ -3,7 +3,7 @@ import { ListGroup, Button } from "react-bootstrap";
 
 const ItemTarea = ({tarea, id}) => {
   const handleDelete = async()=>{
-    const {data} = await axios.delete(`http://localhost:4002/api/listas/borrar-tarea/${id}`).then(res=>window.location.reload())
+    const {data} = await axios.delete(`https://lista-tareas-backend-eosin.vercel.app/api/listas/borrar-tarea/${id}`).then(res=>window.location.reload())
     
     console.log(data);
   }

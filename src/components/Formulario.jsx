@@ -15,7 +15,7 @@ const Formulario = () => {
       alert("La tarea está vacía");
       return;
     }
-    await axios.post("http://localhost:4002/api/listas/crear-tarea",{tarea})
+    await axios.post("https://lista-tareas-backend-eosin.vercel.app/api/listas/crear-tarea",{tarea})
     .then(res=> window.location.reload())
 
   };
